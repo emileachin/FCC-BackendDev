@@ -10,6 +10,7 @@
 	"author": "Emilea Chin",
 	"description": "Backend-development and API development with Express",
 	"keywords": ["freecodecamp", "backend", "fcc"],
+	"license": "MIT",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/freeCodeCamp/boilerplate-npm.git"
