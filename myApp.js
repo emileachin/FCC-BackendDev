@@ -5,28 +5,23 @@ let app = express();
 
 console.log("Hello World!");
 
-/*
-app.get('/', function(req, res) {
-    res.send('Hello Express');
-})
-*/
-
-app.get('/', function(req, res) {
-    let absolutePath = __dirname + "/views/index.html"
-    res.sendFile(absolutePath)
-})
+const MESSAGE_STYLE = process.env.MESSAGE_STYLE
 
 app.use('/public', express.static(__dirname + '/public'))
 
 app.get('/json', function(req, res) {
     let message = "Hello json"
-    if (process.env.MESSAGE_STYLE == "uppercase") {
-        message = message.toUpperCase()
+    const messageNew = MESSAGE_STYLE === "uppercase" ? message.toUpperCase() : message
+    const data = {
+        "message": messageNew
     }
-    res.json({"message": message})
+    res.json(data)
 })
 
-
+app.get('/', function(req, res) {
+    let absolutePath = __dirname + "/views/index.html"
+    res.sendFile(absolutePath)
+})
 
 
 
