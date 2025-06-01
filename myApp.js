@@ -11,12 +11,12 @@ app.use(function(req, res, next) {
 });
 
 app.get('/now', function(req,res, next){
-  
+    req.time = new Date().toString();
   next();
 }, function(req, res){
- var time =  new Date().toString()
-  console.log('time'+time);
-  res.json({'time': time});
+ 
+  console.log('time'+req.time);
+  res.json({'time': req.time});
 });
 
 app.get('/json', function(req, res) {
