@@ -10,12 +10,14 @@ app.use(function(req, res, next) {
     next();
 });
 
-app.get('/now', function(req, res, next) {
-    req.time = new Date().toString();
-    next();
+app.get('/now', function(req,res, next){
+  
+  next();
 }, function(req, res){
-    res.send(req.time)
-})
+ var time =  new Date()
+  console.log('time'+time);
+  res.json({'time': time});
+});
 
 app.get('/json', function(req, res) {
     let hello = "Hello json"
