@@ -46,13 +46,13 @@ app.get('/:word/echo', function(req, res) {
     res.json(jsonObj)
 })
 
+app.get('/name', function(req, res) {
+    let first = req.query.first;
+    let last = req.query.last;
 
-
-
-
-
-
-
+    let jsonObj = {"name": first + " " + last}
+    res.json(jsonObj)
+})
 
 
 
