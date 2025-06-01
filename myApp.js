@@ -39,7 +39,12 @@ app.get('/', function(req, res) {
     res.sendFile(absolutePath)
 })
 
+app.get('/:word/echo', function(req, res) {
+    let word = req.params.word
 
+    let jsonObj = {"echo": word}
+    res.json(jsonObj)
+})
 
 
 
