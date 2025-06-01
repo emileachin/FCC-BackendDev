@@ -14,7 +14,7 @@ app.get('/now', function(req,res, next){
   
   next();
 }, function(req, res){
- var time =  new Date()
+ var time =  new Date().toString()
   console.log('time'+time);
   res.json({'time': time});
 });
